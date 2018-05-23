@@ -20,7 +20,6 @@ import Servant.Client as HTTP
 import Servant.API
 import Network.HTTP.Client (newManager, defaultManagerSettings)
 import qualified Network.HTTP.Client.TLS as TLS
-import Control.Monad.IO.Class
 
 runTickets :: String -> Int -> [CLI.Task] -> BitcodeDelivery -> IO (Either ServantError [CLI.Response])
 runTickets _ _ [] _ = error "Internal error: No tasks provided to runTickets."
