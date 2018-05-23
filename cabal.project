@@ -1,0 +1,10 @@
+packages:
+    caw,
+    caw-build,
+    caw-api,
+    deps/llvm-pretty
+    deps/llvm-pretty-bc-parser
+
+allow-newer: servant-client-core:http-types
+             servant-client:http-types
+             servant:http-types

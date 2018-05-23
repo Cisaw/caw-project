@@ -1,0 +1,11 @@
+*.swp
+*.swo
+tags
+dist
+cabal.sandbox.config
+cabal.project.freeze
+.cabal-sandbox
+deps/*
+dist-newstyle
+.ghc.environment*
+result
