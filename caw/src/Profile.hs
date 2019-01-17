@@ -36,10 +36,10 @@ defaultProfile :: Profile
 defaultProfile = Profile (User "guest" "") "no" defaultServer defaultPort
 
 defaultServer :: HostName
-defaultServer = "cisaw.io"
+defaultServer = "https://cisaw.io"
 
 defaultPort :: Int
-defaultPort = 8080
+defaultPort = 443
 
 readProfileFile :: FilePath -> IO (Maybe Profile)
 readProfileFile fp =

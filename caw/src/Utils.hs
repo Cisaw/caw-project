@@ -14,16 +14,14 @@ import           Config
 
 readConfigAndProfile :: FilePath -> Maybe FilePath -> IO (Config,Profile)
 readConfigAndProfile cFP pFP =
-  do let cfgErr   = "Could not parse the project configuration file: '" <> cFP <> "'"
-         mCfg     = readConfigFile cFP
-         getProfile =
+  do let getProfile =
             do p <- maybe findAndReadProfileFile readProfileFile pFP
                case p of
                 Nothing ->
                     do putStrLn "Using default (guest) profile!  Consider saving a profile to $HOME/.caw.yaml"
                        pure defaultProfile
                 Just x -> pure x
-     projCfg  <- loadOrFail mCfg cfgErr
+     projCfg  <- maybe (pure noConfig) pure =<< readConfigFile cFP
      profile  <- getProfile
      return (projCfg,profile)
 

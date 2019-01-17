@@ -32,6 +32,9 @@ data Config =
            }
   deriving (Show)
 
+noConfig :: Config
+noConfig = Config (CompileFiles []) []
+
 data BuildMethod
         = ScriptBuild { cfgScriptFile, cfgBitcodeFile :: FilePath }
         -- ^ Compile and link using a script
