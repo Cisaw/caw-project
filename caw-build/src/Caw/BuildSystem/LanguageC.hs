@@ -93,7 +93,7 @@ typeOfTypeSpec ty =
         CTypeOfExpr  _   _    -> error "C type not supported"
         CTypeOfType  _   _    -> error "C type not supported"
         CAtomicType  _   _    -> error "C type not supported"
-        CFloat128Type _       -> error "C type not supported"
+        _                     -> error "C type not supported"
 
 
 
